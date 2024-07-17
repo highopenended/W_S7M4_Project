@@ -82,7 +82,7 @@ export default function App({ lang = 'en' }) {
 
         <div className="inputGroup">
           <label htmlFor="username">{texts.LABEL_USERNAME}</label>
-          <input id="username" name="username" onChange={onChange} value={values.username} type="text" placeholder="Type username" />
+          <input id="username" name="username" onChange={onChange} value={values.username} type="text" placeholder={texts.PLACEHOLDER_USERNAME} />
           {errors.username && <div className="validation">{errors.username}</div>}
         </div>
 
