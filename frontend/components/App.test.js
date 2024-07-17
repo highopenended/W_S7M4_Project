@@ -5,12 +5,13 @@ import App from './App'
 import txt from '../i18n/index.json'
 
 describe('Module 4 Project Tests', () => {
+
+
+  let texts=txt[App.lang]
+
+  // 👉 TASK 1
   describe('English Language', () => {
-    /*
-      👉 TASK 1
-      One test is done for you as an example.
-    */
-   
+
     // TEXTS
     test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
       render(<App lang="en" />)
@@ -82,12 +83,68 @@ describe('Module 4 Project Tests', () => {
     //   expect(screen.getByText("Crear Cuenta")).toBeVisible()
     // })
 
+    // TEXTS
+    test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_HEADING_CREATE_ACCOUNT)).toBeVisible()
+    })
+    test(`TEXT_FAV_LANG_JS is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_FAV_LANG_JS)).toBeVisible()
+    })
+    test(`TEXT_FAV_LANG_RUST is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_FAV_LANG_RUST)).toBeVisible()
+    })
+    test(`TEXT_OPT_FAV_FOOD_1 is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_1)).toBeVisible()
+    })
+    test(`TEXT_OPT_FAV_FOOD_2 is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_2)).toBeVisible()
+    })
+    test(`TEXT_OPT_FAV_FOOD_3 is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_3)).toBeVisible()
+    })
+    test(`TEXT_OPT_FAV_FOOD_4 is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_4)).toBeVisible()
+    })
+    test(`TEXT_SUBMIT is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_SUBMIT)).toBeVisible()
+    })
+    test(`TEXT_FAV_LANG is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByText(txt.en.TEXT_FAV_LANG)).toBeVisible()
+    })
+
+    // LABELS
+    test(`LABEL_USERNAME is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByLabelText(txt.en.LABEL_USERNAME)).toBeVisible()
+    })
+    test(`LABEL_FAV_FOOD is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByLabelText(txt.en.LABEL_FAV_FOOD)).toBeVisible()
+    })
+    test(`LABEL_ACCEPT_TERMS is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByLabelText(txt.en.LABEL_ACCEPT_TERMS)).toBeVisible()
+    })
+
+    // PLACEHOLDERS
+    test(`PLACEHOLDER_USERNAME is visible`, () => {
+      render(<App lang="en" />)
+      expect(screen.getByPlaceholderText(txt.en.PLACEHOLDER_USERNAME)).toBeVisible()
+    })
 
 
 
 
 
-    
   })
 
 
