@@ -4,10 +4,8 @@ import '@testing-library/jest-dom'
 import App from './App'
 import txt from '../i18n/index.json'
 
+// const [texts,setTexts]=useState()
 describe('Module 4 Project Tests', () => {
-
-
-  let texts=txt[App.lang]
 
   // 👉 TASK 1
   describe('English Language', () => {
@@ -15,6 +13,7 @@ describe('Module 4 Project Tests', () => {
     // TEXTS
     test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
       render(<App lang="en" />)
+      // setTexts(App.lang)
       expect(screen.getByText(txt.en.TEXT_HEADING_CREATE_ACCOUNT)).toBeVisible()
     })
     test(`TEXT_FAV_LANG_JS is visible`, () => {
@@ -73,15 +72,8 @@ describe('Module 4 Project Tests', () => {
   })
 
   describe('Spanish Language', () => {
-    /*
-      👉 TASK 3
-
-      This is done after making the UI multilingual.
-    */
-    // test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
-    //   render(<App lang="es" />)
-    //   expect(screen.getByText("Crear Cuenta")).toBeVisible()
-    // })
+    // 👉 TASK 3
+    // This is done after making the UI multilingual.
 
     // TEXTS
     test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
@@ -97,47 +89,47 @@ describe('Module 4 Project Tests', () => {
       expect(screen.getByText(txt.esp.TEXT_FAV_LANG_RUST)).toBeVisible()
     })
     test(`TEXT_OPT_FAV_FOOD_1 is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_1)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_OPT_FAV_FOOD_1)).toBeVisible()
     })
     test(`TEXT_OPT_FAV_FOOD_2 is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_2)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_OPT_FAV_FOOD_2)).toBeVisible()
     })
     test(`TEXT_OPT_FAV_FOOD_3 is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_3)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_OPT_FAV_FOOD_3)).toBeVisible()
     })
     test(`TEXT_OPT_FAV_FOOD_4 is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_OPT_FAV_FOOD_4)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_OPT_FAV_FOOD_4)).toBeVisible()
     })
     test(`TEXT_SUBMIT is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_SUBMIT)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_SUBMIT)).toBeVisible()
     })
     test(`TEXT_FAV_LANG is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText(txt.en.TEXT_FAV_LANG)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_FAV_LANG)).toBeVisible()
     })
 
     // LABELS
     test(`LABEL_USERNAME is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByLabelText(txt.en.LABEL_USERNAME)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByLabelText(txt.esp.LABEL_USERNAME)).toBeVisible()
     })
     test(`LABEL_FAV_FOOD is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByLabelText(txt.en.LABEL_FAV_FOOD)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByLabelText(txt.esp.LABEL_FAV_FOOD)).toBeVisible()
     })
     test(`LABEL_ACCEPT_TERMS is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByLabelText(txt.en.LABEL_ACCEPT_TERMS)).toBeVisible()
+      render(<App lang="esp" />)
+      expect(screen.getByLabelText(txt.esp.LABEL_ACCEPT_TERMS)).toBeVisible()
     })
 
     // PLACEHOLDERS
     test(`PLACEHOLDER_USERNAME is visible`, () => {
-      render(<App lang="en" />)
+      render(<App lang="esp" />)
       expect(screen.getByPlaceholderText(txt.en.PLACEHOLDER_USERNAME)).toBeVisible()
     })
 
@@ -146,12 +138,6 @@ describe('Module 4 Project Tests', () => {
 
 
   })
-
-
-
-
-
-
 
 
   describe('getEntriesByKeyPrefix', () => {
@@ -167,10 +153,15 @@ describe('Module 4 Project Tests', () => {
       the tests are written _before_ implementing
       the function being tested.
     */
+
+
+
+
     })
   })
 })
 function getEntriesByKeyPrefix(obj, keyPrefix) {
+  return Object.entries(obj).filter(([key,val])=>key.split('_')[0])
   /*
     👉 TASK 4 part 1
 
